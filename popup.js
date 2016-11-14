@@ -51,3 +51,10 @@ function getCurrentTabUrl(callback) {
 document.addEventListener('DOMContentLoaded', function() {
 
 });
+
+$(document).on("click", "#parseButton",function() {
+    chrome.tabs.getSelected(null, function(tab) {
+      chrome.tabs.sendMessage(tab.id, {message: "highlightCode"});
+      window.close();
+    });
+});

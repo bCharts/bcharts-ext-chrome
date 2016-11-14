@@ -8,10 +8,15 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
             window.seltext = request.data
         break;
 
+        case 'htmlParsed':
+          postData("http://i.beta.bcharts.xyz/integrations/requests/upload/csv", request.data);
+        break;
+
         default:
             sendResponse({data: 'Invalid arguments'});
         break;
     }
+
 });
 
 
@@ -59,3 +64,9 @@ for (var i = 0; i < contexts.length; i++)
     var context = contexts[i];
     chrome.contextMenus.create({"title": "Send to bCharts", "contexts":[context], "onclick": savetext});
 }
+
+
+$(document).on("click", "#parseButton",function() {
+    chrome.tabs.sendMessage(tab.id, {message: HTMLparsing});
+
+    });
