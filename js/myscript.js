@@ -44,13 +44,13 @@ $( 'table' ).mouseover(function(event) {
 		var height = $(this).closest('table').height();
 		tableID =  $(this).attr("id");
 	    var tag = '<div id="rect" name="rectname" style="position: absolute; padding: 0px; margin: 0px; border-style: dotted; border-width: 2px; border-color: #2980b9; background-color: #3498db; opacity: 0.3; top: ' + position.top + 'px; left: ' + position.left + 'px; width: ' + width + 'px; height: ' + height + 'px; z-index: "1147483646"></div>';
-		var btnblock = '<div id="btn" style="position: absolute; padding: 0px; margin: 0px; top: ' + (position.top+10) + 'px; left: ' + (position.left+10) + 'px; z-index: "2147483646"><button id="grabber" style="font-family:Oswald">Copy</button></div>'
+		var btnblock = '<div id="btn" style="position: absolute; padding: 0px; margin: 0px; top: ' + (position.top+10) + 'px; left: ' + (position.left+10) + 'px; z-index: "2147483646"><a href="#" id="grabber"><img id="beelogo" style="display: block; width: 95%; height:auto; padding: 5%;"></img></a></div>'
+		
 		if (!created) {
 			$(tag).appendTo(document.body);
 			$(btnblock).appendTo(document.body);
 			created = true;
-			$("#rect").on('click', function (event) {
-   	 		}, false);
+			$('#beelogo').attr('src', chrome.extension.getURL('beelogo-old.png'));
 		}
 
 	}
