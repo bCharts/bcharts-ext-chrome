@@ -26,12 +26,12 @@ function savetext(info,tab)
   var payload = window.seltext.replace(/\t/g, ",").replace(/[^\x00-\x7F]/g, "");
 
   var data = {
-    'redirect_uri': "http://localhost:3000/chartdesigner" ,
+    'redirect_uri': "https://beta.bcharts.xyz/chartdesigner" ,
     'payload': payload,
     'redirect_type': 'redirect',
   }
 
-  postData("http://localhost:4000/integrations/requests/upload/csv", data);
+  postData("https://i.beta.bcharts.xyz/integrations/requests/upload/csv", data);
 }
 
 function postData(url, data) {
