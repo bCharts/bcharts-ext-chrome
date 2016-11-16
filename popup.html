@@ -7,38 +7,55 @@
 <html>
   <head>
     <title>bCharts.xyz - Chart Anything</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-      .tableToCSV
-      {
-          font-size:250%;
-      }
-    </style>
-
-
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-   
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+
     <script src="js/jquery.min.js"></script>
-     <script src="popup.js"></script>
+    <script src="popup.js"></script>
     <script src="js/jquery.tableCSVExport.js"></script>
   </head>
   <body>
-    <img src="flyingbee.gif">
-    <button id="parseButton">Parse HTML</button>
+  <header class="cf">
+
+<nav>
+<img src="flyingbeelogo.png" style="height: 23px;">
+<span style="color:#bf4c24;font-size:18px;font-weight:bold;line-height:1px;text-shadow: 0 1px 0 #444">BCharts</span>
+    <ul>
+        <li id="login">
+            <a id="login-trigger" href="#">
+                Log in <span>&#x25BC;</span>
+            </a>
+            <div id="login-content">
+                <form>
+                    <fieldset id="inputs">
+                        <input id="username" type="email" name="Email" placeholder="Your email address" required>   
+                        <input id="password" type="password" name="Password" placeholder="Password" required>
+                    </fieldset>
+                    <fieldset id="actions">
+                        <input type="submit" id="submit" class="btn" value="Log in">
+                        <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+                    </fieldset>
+                </form>
+            </div>                     
+        </li>
+        <li id="signup">
+            <a href="">Sign up FREE</a>
+        </li>
+    </ul>
+</nav>
+</header>
+
+
+
+
+    
+    <button id="parseButton" class="btn" style="margin:5%">Parse HTML</button>
   </body>
 </html>
+
+
