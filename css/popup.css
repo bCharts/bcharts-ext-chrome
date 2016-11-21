@@ -123,7 +123,7 @@ nav #login-content {
   position: absolute;
   top: 31px;
   right: 0;
-  z-index: 999;    
+  z-index: 1000;    
   background: #444;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
   background-image: -webkit-linear-gradient(top, #444, #000);
@@ -256,11 +256,22 @@ nav li #login-content {
   float: left;
   margin: 0;
   padding: 0;
-  width: 500px;
-  height: 300px;
-  background: #ccc;
+  width: 350px;
+  height: 240px;
   text-align: center;
-  line-height: 300px;
+  line-height: 240px;
+
+  background-color: #bf4c24;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d46a15), to(#bf4c24));
+  background-image: -webkit-linear-gradient(top, #d46a15, #bf4c24);
+  background-image: -moz-linear-gradient(top, #d46a15, #bf4c24);
+  background-image: -ms-linear-gradient(top, #d46a15, #bf4c24);
+  background-image: -o-linear-gradient(top, #d46a15, #bf4c24);
+  background-image: linear-gradient(top, #d46a15, #bf4c24);
+}
+
+#slider ul li img{
+  width: 350px;
 }
 
 a.control_prev, a.control_next {
@@ -290,7 +301,7 @@ a.control_prev {
 }
 
 a.control_next {
-  right: 0;
+  right: 0px;
   border-radius: 2px 0 0 2px;
 }
 
@@ -300,4 +311,5 @@ a.control_next {
   width: 160px;
   font-size: 18px;
 }
+
 
